@@ -5,7 +5,7 @@ spring:
     name: cloud-provider-payment
   cloud:
     zookeeper:
-      connect-string: localhost:2181
+      connect-string: 1.15.157.156:2181
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
