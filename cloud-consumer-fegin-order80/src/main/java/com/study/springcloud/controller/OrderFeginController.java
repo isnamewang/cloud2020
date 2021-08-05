@@ -20,7 +20,7 @@ public class OrderFeginController {
 
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
-        log.info("进来-----------------0----------");
+        log.info(".....进来-----------------0----------");
         CommonResult forObject = service.getPaymentById(id);
         log.info(forObject.toString()+"--------------1-------------------");
         return forObject;
