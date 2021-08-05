@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@DefaultProperties(defaultFallback = "gloabal_TimeOutHandler")
+//@DefaultProperties(defaultFallback = "gloabal_TimeOutHandler")
 public class OrderHystrixController {
 
     @Resource
