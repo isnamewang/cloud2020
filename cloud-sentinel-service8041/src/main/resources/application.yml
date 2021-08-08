@@ -1,0 +1,24 @@
+server:
+  port: 8041
+
+
+spring:
+  application:
+    name:  cloud-sentinel-service
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:9999
+        port: 8719
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #defaultZone:  http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
+      defaultZone:  http://eureka7001.com:7001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

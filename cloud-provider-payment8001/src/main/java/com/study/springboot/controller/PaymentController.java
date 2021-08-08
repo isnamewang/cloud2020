@@ -11,6 +11,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,6 +23,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String port;
+
+    @Value("${spring.application.datasource.driver-class-name}")
+    private String driver;
     @Resource
     private DiscoveryClient discoveryClient;
 
@@ -43,7 +47,7 @@ public class PaymentController {
         Payment result = paymentService.getPaymentById(id);
         log.info("*****得到结果****: "+result);
         if(result!=null){
-            return new CommonResult(200,"查询成功,port:"+port,result);
+            return new CommonResult(200,"查询成功,port:"+port,result+"  "+driver);
         }else{
             return new CommonResult(444,"查询失败,查询ID： "+id,null);
         }
